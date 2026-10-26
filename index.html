@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
   :root {
-    --bg-paper: #f4ebd9;
+    --bg-paper: #fdfbf7; /* لون بيج فاتح نضيف */
     --gold: #b38e4d;
     --gold-light: #cfa860;
     --text-dark: #4a3525;
@@ -17,7 +17,7 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
   
   body { 
-    background-color: #1a1a1a; 
+    background-color: #2c2c2c; 
     color: #fff; 
     font-family: 'Cairo', sans-serif;
     display: flex; 
@@ -46,7 +46,6 @@
   .form-group input:focus { border-color: var(--gold); outline: none; }
   .form-group input[type="file"] { background: #2a2a2a; cursor: pointer; }
 
-  /* أزرار التحكم */
   .save-btn {
     width: 100%; padding: 10px; margin-bottom: 8px;
     background: linear-gradient(135deg, var(--gold-light), var(--gold));
@@ -59,7 +58,7 @@
   .save-btn.secondary { background: #1f1f1f; border: 1px solid var(--gold); color: #fff; }
   .save-btn.clear { background: #2a2a2a; border: 1px solid #555; color: #bbb; margin-bottom: 0; }
   .save-btn.clear:hover { color: #fff; border-color: #ff4d4d; }
-  
+
   .share-input {
     width: 100%; padding: 9px; margin-top: 8px; margin-bottom: 8px;
     background: #222; border: 1px solid #444; border-radius: 8px; color: #fff;
@@ -70,11 +69,10 @@
   .main-area {
     flex: 1; margin-right: 0;
     display: flex; justify-content: center; align-items: center; 
-    padding: 40px; background: #222;
+    padding: 40px; background: #2c2c2c;
     transition: margin-right 0.3s;
   }
 
-  /* الكارت */
   .wedding-card {
     background-color: var(--bg-paper);
     background-image: url('https://www.transparenttextures.com/patterns/cream-paper.png'); 
@@ -87,11 +85,7 @@
     transition: background-image 0.3s ease;
   }
 
-  .wedding-card::after {
-    content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(244, 235, 217, 0.6); z-index: 0; pointer-events: none;
-  }
-
+  /* إطار داخلي */
   .wedding-card::before {
     content: ''; position: absolute; top: 8px; left: 8px; right: 8px; bottom: 8px;
     border: 1px solid var(--gold-light); pointer-events: none; z-index: 1;
@@ -104,10 +98,13 @@
     text-align: right; color: var(--text-dark); font-family: 'Amiri', serif;
     font-size: 18px; line-height: 1.3; font-weight: bold;
   }
-  .top-quote .lines { display: flex; align-items: center; gap: 8px; margin-top: 5px; justify-content: flex-end; }
+  .top-quote .lines {
+    display: flex; align-items: center; gap: 8px; margin-top: 5px; justify-content: flex-end;
+  }
   .top-quote .lines span { width: 30px; height: 1px; background: var(--gold); }
   .top-quote .lines i { color: var(--gold); font-size: 12px; }
 
+  /* القوس العلوي */
   .arch-container {
     width: 280px; height: 280px;
     margin: 40px auto 10px auto;
@@ -129,7 +126,9 @@
     line-height: 1.8; margin-bottom: 25px; font-weight: bold;
   }
 
-  .vertical-names { display: flex; flex-direction: column; align-items: center; gap: 10px; margin-bottom: 20px; }
+  .vertical-names {
+    display: flex; flex-direction: column; align-items: center; gap: 10px; margin-bottom: 20px;
+  }
   
   .name-box h1 {
     font-family: 'Aref Ruqaa', serif; font-size: 55px; color: var(--gold); 
@@ -137,12 +136,18 @@
   }
   .name-box p { font-family: 'Amiri', serif; font-size: 16px; color: var(--text-dark); font-weight: bold; }
   
-  .and-symbol { font-family: 'Aref Ruqaa', serif; font-size: 28px; color: var(--gold); margin: 10px 0; }
+  .and-symbol {
+    font-family: 'Aref Ruqaa', serif; font-size: 28px; color: var(--gold);
+    margin: 10px 0;
+  }
 
   .date-section {
-    margin: 20px 0; font-family: 'Amiri', serif; font-size: 18px; color: var(--text-dark); font-weight: bold; line-height: 1.6;
+    margin: 20px 0; font-family: 'Amiri', serif; font-size: 18px; color: var(--text-dark); font-weight: bold;
+    line-height: 1.6;
   }
-  .date-section .divider { display: flex; justify-content: center; align-items: center; gap: 10px; margin: 10px 0; }
+  .date-section .divider {
+    display: flex; justify-content: center; align-items: center; gap: 10px; margin: 10px 0;
+  }
   .date-section .divider span { width: 60px; height: 1px; background: var(--gold); }
   .date-section .divider i { color: var(--gold); font-size: 12px; }
 
@@ -164,7 +169,9 @@
   .time-box span { display: block; font-size: 22px; font-weight: bold; color: var(--gold); }
   .time-box small { font-size: 12px; color: var(--text-dark); }
 
-  .interactive-area { margin-top: 20px; display: flex; flex-direction: column; align-items: center; gap: 15px; width: 100%; }
+  .interactive-area {
+    margin-top: 20px; display: flex; flex-direction: column; align-items: center; gap: 15px; width: 100%;
+  }
   .action-buttons { display: flex; gap: 15px; width: 100%; justify-content: center; }
   .action-btn {
     flex: 1; max-width: 200px; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 15px; display: flex; justify-content: center; align-items: center; gap: 8px; transition: 0.3s;
@@ -174,6 +181,7 @@
   .btn-map { background: #fff; color: var(--text-dark); border: 2px solid var(--gold); }
   .btn-map:hover { background: var(--gold); color: #fff; }
 
+  /* الأزرار العائمة */
   .print-btn {
     position: fixed; bottom: 30px; left: 30px; background: #fff; color: var(--text-dark); 
     padding: 15px 25px; border-radius: 50px; cursor: pointer; border: 2px solid var(--gold); font-family: 'Cairo', sans-serif; 
@@ -182,27 +190,59 @@
   }
   .print-btn:hover { transform: scale(1.05); background: var(--gold); color: #fff; }
 
-  /* إعدادات الطباعة */
+  /* 🔥 الزرار الشيك الجديد للموسيقى (فوق على الشمال) */
+  .music-btn {
+    position: fixed; top: 30px; right: 30px; /* نقلناه فوق يمين عشان ميتلخبطش مع الطباعة */
+    background: rgba(253, 251, 247, 0.9); 
+    color: var(--gold);
+    width: 45px; height: 45px; border-radius: 50%; 
+    display: flex; justify-content: center; align-items: center;
+    font-size: 18px; cursor: pointer; border: 2px solid var(--gold); 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15); z-index: 2000; transition: all 0.3s ease;
+  }
+  .music-btn:hover { background: var(--gold); color: #fff; transform: scale(1.1); }
+  
+  /* نبض ذهبي هادي لما الأغنية تشتغل */
+  .music-btn.playing {
+    background: var(--gold); color: #fff;
+    animation: pulseGold 1.5s infinite;
+  }
+  @keyframes pulseGold {
+    0% { box-shadow: 0 0 0 0 rgba(179, 142, 77, 0.5); }
+    70% { box-shadow: 0 0 0 12px rgba(179, 142, 77, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(179, 142, 77, 0); }
+  }
+
+  /* ================= إعدادات الطباعة ================= */
   @page { size: A4 portrait; margin: 0; }
+
   @media print {
-    body { background: #fff !important; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; display: block !important; height: 100vh; overflow: hidden; }
-    .sidebar, .print-btn, .interactive-area { display: none !important; }
-    .main-area { margin: 0 !important; padding: 0 !important; background: transparent !important; display: flex !important; justify-content: center; align-items: center; height: 100vh; }
-    .wedding-card { box-shadow: none !important; margin: 0 auto !important; border: 2px solid var(--gold) !important; width: 100% !important; max-width: 100% !important; height: 100vh !important; padding: 10px 30px !important; page-break-inside: avoid; page-break-after: avoid; transform: scale(0.95); }
-    .wedding-card::after { background: rgba(255, 255, 255, 0.4) !important; z-index: 0; }
-    .card-inner-content { z-index: 2; position: relative;}
-    .arch-container { width: 220px !important; height: 220px !important; margin: 20px auto 10px auto !important; }
-    .name-box h1 { font-size: 40px !important; }
-    .vertical-names { gap: 5px !important; margin-bottom: 10px !important;}
-    .and-symbol { margin: 5px 0 !important; font-size: 20px !important;}
-    .invite-text { margin-bottom: 10px !important; font-size: 14px !important;}
-    .date-section { margin: 10px 0 !important; font-size: 14px !important;}
+    body { 
+      background: #fff !important; 
+      -webkit-print-color-adjust: exact !important; 
+      print-color-adjust: exact !important; 
+      display: block !important; height: auto !important; overflow: visible !important; margin: 0 !important; padding: 0 !important;
+    }
+    .sidebar, .print-btn, .music-btn, .interactive-area, .top-quote { display: none !important; }
+    .main-area { margin: 0 !important; padding: 0 !important; background: transparent !important; display: block !important; height: auto !important; }
+    .wedding-card { 
+      box-shadow: none !important; margin: 0 auto !important; border: 2px solid var(--gold) !important; 
+      width: 100% !important; max-width: 100% !important; height: auto !important; padding: 30px 40px !important; 
+      page-break-inside: avoid !important; page-break-after: avoid !important; 
+      transform: scale(0.9); transform-origin: top center; background-color: var(--bg-paper) !important;
+    }
+    .card-inner-content { z-index: 2; position: relative; }
+    .arch-container { width: 220px !important; height: 220px !important; margin: 10px auto 10px auto !important; }
+    .name-box h1 { font-size: 45px !important; }
+    .vertical-names { gap: 5px !important; margin-bottom: 15px !important;}
+    .and-symbol { margin: 5px 0 !important; font-size: 24px !important;}
+    .invite-text { margin-bottom: 10px !important; font-size: 15px !important; color: var(--text-dark) !important;}
+    .date-section { margin: 15px 0 !important; font-size: 15px !important; color: var(--text-dark) !important;}
     .details-grid { padding: 10px 0 !important; margin-bottom: 10px !important; }
-    .top-quote { top: 15px !important; right: 15px !important; font-size: 14px !important;}
     .countdown-section { display: block !important; margin: 10px 0 !important; }
-    .time-box { padding: 4px 8px !important; border: 1px solid var(--gold) !important;}
-    .time-box span { font-size: 16px !important; }
-    .time-box small { font-size: 10px !important; }
+    .time-box { padding: 5px 10px !important; border: 1px solid var(--gold) !important; box-shadow: none !important;}
+    .time-box span { font-size: 18px !important; color: var(--gold) !important;}
+    .time-box small { font-size: 11px !important; color: var(--text-dark) !important;}
   }
 
   @media (max-width: 900px) {
@@ -215,6 +255,7 @@
     .action-buttons { flex-direction: column; }
     .action-btn { max-width: 100%; }
     .print-btn { bottom: 15px; padding: 10px 15px; font-size: 14px; left: 15px;}
+    .music-btn { top: 15px; right: 15px; width: 40px; height: 40px; font-size: 16px; }
     .details-grid { flex-direction: column; gap: 15px; }
     .detail-item:not(:last-child) { border-left: none; border-bottom: 1px solid rgba(179, 142, 77, 0.5); padding-left: 0; padding-bottom: 15px;}
   }
@@ -285,9 +326,6 @@
       </button>
       <button type="button" class="save-btn secondary" onclick="loadDesign()">
         <i class="fas fa-rotate-left"></i> استعادة آخر تصميم محفوظ
-      </button>
-      <button type="button" class="save-btn clear" onclick="clearDesign()">
-        <i class="fas fa-trash-alt"></i> مسح التصميم المحفوظ
       </button>
     </div>
 
@@ -394,14 +432,18 @@
 
   </main>
 
-  <button class="print-btn" onclick="window.print()"><i class="fas fa-print"></i> طباعة الكارت</button>
+  <button class="print-btn" onclick="window.print()"><i class="fas fa-print"></i> طباعة</button>
+  
+  <!-- الزرار الشيك الجديد للموسيقى -->
+  <button id="music-btn" class="music-btn" onclick="toggleMusic()">
+    <i class="fas fa-music"></i>
+  </button>
 
-  <audio id="bg-music" loop autoplay playsinline>
+  <audio id="bg-music" loop playsinline>
     <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a73467.mp3?filename=romantic-piano-114516.mp3" type="audio/mpeg">
   </audio>
 
   <script>
-    // دالة تحديث الكارت
     function updateCard() {
       document.getElementById('display-groomName').innerText = document.getElementById('groomName').value;
       document.getElementById('display-brideName').innerText = document.getElementById('brideName').value;
@@ -433,7 +475,6 @@
       document.getElementById('mapBtn').href = document.getElementById('locationUrl').value;
     }
 
-    // رفع الصور
     function loadImage(event, imgId) {
       const file = event.target.files[0];
       if (file) {
@@ -454,7 +495,6 @@
       }
     }
 
-    // العداد التنازلي
     let countdownInterval;
     function startCountdown() {
       clearInterval(countdownInterval);
@@ -485,27 +525,31 @@
       }, 1000);
     }
 
-    // الموسيقى التلقائية
+    // 🎵 إدارة الموسيقى (الزرار الشيك)
     const music = document.getElementById('bg-music');
-    let hasInteracted = false;
+    const musicBtn = document.getElementById('music-btn');
+    let isPlaying = false;
 
-    function autoPlayMusic() {
-      if (hasInteracted) return;
-      music.volume = 0.25;
-      const playPromise = music.play();
-      if (playPromise !== undefined) {
-        playPromise.then(() => {
-          hasInteracted = true;
-          document.removeEventListener('click', autoPlayMusic);
-          document.removeEventListener('touchstart', autoPlayMusic);
-        }).catch(() => {});
+    function toggleMusic() {
+      if (isPlaying) {
+        music.pause();
+        musicBtn.innerHTML = '<i class="fas fa-music"></i>';
+        musicBtn.classList.remove('playing');
+      } else {
+        music.play().catch(e => console.log("المتصفح محتاج تفاعل"));
+        musicBtn.innerHTML = '<i class="fas fa-pause"></i>';
+        musicBtn.classList.add('playing');
       }
+      isPlaying = !isPlaying;
     }
-    
-    // محاولة التشغيل من البداية
-    document.addEventListener('click', autoPlayMusic);
-    document.addEventListener('touchstart', autoPlayMusic);
-    autoPlayMusic(); // محاولة أولى
+
+    // محاولة تشغيل تلقائي
+    music.volume = 0.4;
+    music.play().then(() => { 
+        isPlaying = true; 
+        musicBtn.innerHTML = '<i class="fas fa-pause"></i>'; 
+        musicBtn.classList.add('playing'); 
+    }).catch(() => {});
 
     function changeMusic(event) {
       const file = event.target.files[0];
@@ -514,17 +558,18 @@
         reader.onload = function(e) {
           music.src = e.target.result; 
           music.load();
-          music.volume = 0.25;
+          music.volume = 0.4;
           music.play().catch(() => {});
-          hasInteracted = true;
+          isPlaying = true;
+          musicBtn.innerHTML = '<i class="fas fa-pause"></i>';
+          musicBtn.classList.add('playing');
         }
         reader.readAsDataURL(file);
       }
     }
 
-    // الحفظ والاستعادة
-    function saveDesign() {
-      const designData = {
+    function getDesignData() {
+      return {
         groomName: document.getElementById('groomName').value,
         groomFamily: document.getElementById('groomFamily').value,
         brideName: document.getElementById('brideName').value,
@@ -536,24 +581,9 @@
         bgImage: document.getElementById('weddingCard').style.backgroundImage,
         coupleImg: document.getElementById('coupleImg').src
       };
-
-      try {
-        localStorage.setItem('weddingCardDesign', JSON.stringify(designData));
-        alert('✅ تم حفظ التصميم بنجاح');
-      } catch (e) {
-        alert('⚠️ تعذر حفظ التصميم، ربما حجم الصور كبير جدًا');
-      }
     }
 
-    function loadDesign() {
-      const saved = localStorage.getItem('weddingCardDesign');
-      if (!saved) {
-        alert('⚠️ مفيش تصميم محفوظ لسه');
-        return;
-      }
-
-      const data = JSON.parse(saved);
-
+    function applyDesignData(data) {
       document.getElementById('groomName').value = data.groomName || '';
       document.getElementById('groomFamily').value = data.groomFamily || '';
       document.getElementById('brideName').value = data.brideName || '';
@@ -566,42 +596,38 @@
       if (data.bgImage && data.bgImage !== 'none' && data.bgImage !== '') {
         document.getElementById('weddingCard').style.backgroundImage = data.bgImage;
       }
-
       if (data.coupleImg && data.coupleImg !== '') {
         document.getElementById('coupleImg').src = data.coupleImg;
       }
 
       updateCard();
       startCountdown();
-      alert('✅ تم استعادة التصميم المحفوظ بنجاح');
     }
 
-    function clearDesign() {
-      if (confirm('هل أنت متأكد من مسح التصميم المحفوظ نهائياً؟')) {
-        localStorage.removeItem('weddingCardDesign');
-        alert('تم مسح التصميم المحفوظ');
+    function saveDesign() {
+      try {
+        localStorage.setItem('weddingCardDesign', JSON.stringify(getDesignData()));
+        alert('✅ تم حفظ التصميم بنجاح');
+      } catch (e) {
+        alert('⚠️ تعذر حفظ التصميم، صورك حجمها كبير جداً على المتصفح. جرب صور أصغر.');
       }
     }
 
-    // إنشاء رابط المشاركة
-    function generateShareLink() {
-      const designData = {
-        groomName: document.getElementById('groomName').value,
-        groomFamily: document.getElementById('groomFamily').value,
-        brideName: document.getElementById('brideName').value,
-        brideFamily: document.getElementById('brideFamily').value,
-        weddingDate: document.getElementById('weddingDate').value,
-        venue: document.getElementById('venue').value,
-        locationUrl: document.getElementById('locationUrl').value,
-        whatsappNumber: document.getElementById('whatsappNumber').value,
-        bgImage: document.getElementById('weddingCard').style.backgroundImage,
-        coupleImg: document.getElementById('coupleImg').src
-      };
+    function loadDesign() {
+      const saved = localStorage.getItem('weddingCardDesign');
+      if (!saved) return alert('⚠️ مفيش تصميم محفوظ لسه');
+      applyDesignData(JSON.parse(saved));
+      alert('✅ تم استعادة التصميم المحفوظ بنجاح');
+    }
 
+    function generateShareLink() {
       try {
-        const json = JSON.stringify(designData);
+        const json = JSON.stringify(getDesignData());
         const encoded = encodeURIComponent(btoa(unescape(encodeURIComponent(json))));
-        const baseUrl = window.location.origin + window.location.pathname;
+        
+        // سر التعديل: استخدام window.location.href.split('?')[0] عشان نضمن اللينك صح
+        let baseUrl = window.location.href.split('?')[0];
+        
         const shareUrl = baseUrl + "?share=" + encoded;
 
         const input = document.getElementById('shareLinkInput');
@@ -610,7 +636,12 @@
         input.select();
         input.setSelectionRange(0, 99999);
 
-        alert('✅ تم إنشاء رابط المشاركة بنجاح\nانسخه وأرسله للضيوف على واتساب');
+        // التحذير المهم
+        if (window.location.protocol === 'file:') {
+          alert('⚠️ إنت بتفتح الملف من جهازك (file://).\nالرابط ده مش هيشتغل لما تبعته لحد.\nلازم ترفع الموقع على Netlify الأول عشان تاخد لينك شغال 100%');
+        } else {
+          alert('✅ تم إنشاء رابط المشاركة بنجاح\nانسخه وأرسله للضيوف على واتساب');
+        }
       } catch (e) {
         alert('⚠️ تعذر إنشاء الرابط، غالبًا بسبب حجم الصور كبير جدًا');
       }
@@ -618,68 +649,46 @@
 
     function copyShareLink() {
       const input = document.getElementById('shareLinkInput');
-      if (!input.value) {
-        alert('⚠️ يجب إنشاء الرابط أولاً قبل النسخ');
-        return;
-      }
+      if (!input.value) return alert('⚠️ يجب إنشاء الرابط أولاً قبل النسخ');
       input.select();
       input.setSelectionRange(0, 99999);
       document.execCommand('copy');
-      alert('✅ تم نسخ الرابط بنجاح، جاهز للإرسال على واتساب');
+      alert('✅ تم نسخ الرابط بنجاح، جاهز للإرسال');
     }
 
-    // تطبيق التصميم من الرابط (الجزء اللي كان ناقص)
-    function applyShareDesign() {
-      const params = new URLSearchParams(window.location.search);
-      if (!params.has('share')) return;
-
-      try {
-        const encoded = params.get('share');
-        const json = decodeURIComponent(escape(atob(encoded)));
-        const data = JSON.parse(json);
-
-        document.getElementById('groomName').value = data.groomName || '';
-        document.getElementById('groomFamily').value = data.groomFamily || '';
-        document.getElementById('brideName').value = data.brideName || '';
-        document.getElementById('brideFamily').value = data.brideFamily || '';
-        document.getElementById('weddingDate').value = data.weddingDate || '';
-        document.getElementById('venue').value = data.venue || '';
-        document.getElementById('locationUrl').value = data.locationUrl || '';
-        document.getElementById('whatsappNumber').value = data.whatsappNumber || '';
-
-        if (data.bgImage && data.bgImage !== 'none' && data.bgImage !== '') {
-          document.getElementById('weddingCard').style.backgroundImage = data.bgImage;
-        }
-
-        if (data.coupleImg && data.coupleImg !== '') {
-          document.getElementById('coupleImg').src = data.coupleImg;
-        }
-
-        updateCard();
-        startCountdown();
-        
-        // إخفاء وضع التعديل لو كان مفتوح
-        document.body.classList.remove('edit-mode');
-
-      } catch (e) {
-        console.error("خطأ في تحميل التصميم المشترك:", e);
-      }
-    }
-
-    // التشغيل عند فتح الصفحة
     document.addEventListener('DOMContentLoaded', function() {
-      // 1. لو في لينك مشاركة، طبق التصميم
-      applyShareDesign();
-      
-      // 2. لو مش في مشاركة، وشغال تعديل، افتح لوحة التحكم
       const urlParams = new URLSearchParams(window.location.search);
-      if (urlParams.has('edit') && urlParams.get('edit') === 'true' && !urlParams.has('share')) {
+      
+      if (urlParams.has('share')) {
+        try {
+          const encoded = urlParams.get('share');
+          const json = decodeURIComponent(escape(atob(encoded)));
+          applyDesignData(JSON.parse(json));
+          document.body.classList.remove('edit-mode');
+        } catch (e) {
+          console.error("خطأ في تحميل التصميم المشترك:", e);
+        }
+      } 
+      else if (urlParams.has('edit') && urlParams.get('edit') === 'true') {
         document.body.classList.add('edit-mode');
+        
+        const saved = localStorage.getItem('weddingCardDesign');
+        if (saved) {
+          applyDesignData(JSON.parse(saved));
+        } else {
+          updateCard();
+          startCountdown();
+        }
+      } 
+      else {
+        const saved = localStorage.getItem('weddingCardDesign');
+        if (saved) {
+          applyDesignData(JSON.parse(saved));
+        } else {
+          updateCard();
+          startCountdown();
+        }
       }
-
-      // 3. تأكيد التحديث
-      updateCard();
-      startCountdown();
     });
   </script>
 </body>
